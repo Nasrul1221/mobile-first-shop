@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="px-5 py-10 flex items-center h-7 gap-x-5 fixed left-0 right-0 bg-white">
+    <header className="px-5 py-10 flex items-center h-7 gap-x-5 fixed left-0 right-0 bg-white z-50">
       <button onClick={handleClick} className="md:hidden">
         {isOpen ? <X /> : <Menu />}
       </button>
