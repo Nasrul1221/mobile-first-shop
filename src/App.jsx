@@ -9,7 +9,11 @@ export default function App() {
     {
       path: "/",
       element: <SharedLayout />,
-      children: [{ index: true, element: <Home /> }],
+      children: [
+        { index: true, element: <Home /> },
+        { path: "/cart", element: <p>Cart</p> },
+        { path: "/profile", element: <p>Profile</p> },
+      ],
     },
   ]);
   return router;

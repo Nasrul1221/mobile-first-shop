@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 
 export default function SharedLayout() {
   return (
-    <div>
+    <div className="flex flex-col">
       <Header />
-      <section>
+      <main className="pt-20">
         <Outlet />
-      </section>
+      </main>
     </div>
   );
 }
