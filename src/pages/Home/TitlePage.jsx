@@ -34,7 +34,7 @@ export default function TitlePage() {
 
           <div className="col-span-3 md:col-span-1">
             <strong className="text-2xl">30,000+</strong>
-            <p className="text-xs text-nowrap">Happy Customers</p>
+            <p className="text-xs text-nowrap mb-3 md:mb-0">Happy Customers</p>
           </div>
         </div>
       </div>

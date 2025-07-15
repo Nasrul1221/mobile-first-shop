@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-
 export default function ProductCard({ product }) {
   const averageRating = Math.round(product.rating);
-  console.log(averageRating);
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col place-self-center">
       <img
         src={product.images[0]}
-        className="w-[180px] rounded-lg bg-[#F0EEED]"
+        className="w-[180px]  md:w-[295px] rounded-lg bg-[#F0EEED]"
       />
       <div className="flex flex-col text-left gap-y-2">
-        <strong className="text-sm">{product.title}</strong>
+        <strong className="text-[13px] md:text-base xl:text-lg">
+          {product.title}
+        </strong>
         <div className="flex items-center gap-x-2">
           <img
             className="w-[106px]"
