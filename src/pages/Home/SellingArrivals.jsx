@@ -96,6 +96,10 @@ export default function SellingArrivals() {
             ))
           )}
         </div>
+
+        <button className="max-w-[358px] w-full h-[46px] md:max-w-[218px] border border-black border-opacity-15 rounded-full hover:bg-gray-100 transition-colors duration-200">
+          View all
+        </button>
       </section>
     </div>
   );
