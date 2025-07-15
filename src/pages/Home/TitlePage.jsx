@@ -2,10 +2,10 @@ import React from "react";
 
 export default function TitlePage() {
   return (
-    <section className="bg-[#F2F0F1] h-[853px] w-full md:h-[603px] pt-5 pl-5 pr-5 md:pt-16 md:pl-16 md-pr-16 md:grid md:grid-cols-2">
+    <section className="bg-[#F2F0F1] h-[853px] w-full md:h-[603px] pt-5 pl-5 pr-5 md:pt-16 md:pl-16 md-pr-16 md:grid md:grid-cols-2 gap-x-3">
       <div>
         <div>
-          <h1 className="text-4xl md:text-[64px] font-extrabold w-[315px] md:w-[577px] leading-[34px] md:leading-[64px] mt-7">
+          <h1 className="text-4xl md:text-[64px] font-extrabold w-[315px] md:max-w-[577px] md:w-full leading-[34px] md:leading-[64px] mt-7">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
           <p className="text-sm opacity-60 md:text-base md:max-w-[545px] md:w-full mt-4">
