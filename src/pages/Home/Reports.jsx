@@ -2,7 +2,7 @@ import Report from "../../components/Report";
 
 export default function Reports() {
   return (
-    <section>
+    <section className="">
       <div className="flex justify-between items-center px-5 sm:px-12 md:px-20 lg:px-32">
         <h1 className="text-[32px] sm:text-4xl md:text-[42px] lg:text-5xl font-extrabold">
           OUR HAPPY CUSTOMERS
@@ -45,7 +45,7 @@ export default function Reports() {
           </div>
         </div>
       </div>
-      <div className="flex gap-x-3 px-5 sm:px-12 md:px-20 lg:px-32 mt-4 md:mt-7">
+      <div className="flex justify-center gap-x-3 px-5 sm:px-12 md:px-20 lg:px-32 mt-4 md:mt-7 ">
         <Report
           rating={50}
           name="Sarah M."
