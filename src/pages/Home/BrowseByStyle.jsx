@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function BrowseByStyle() {
   return (
     <div className="flex justify-center">
@@ -7,7 +5,7 @@ export default function BrowseByStyle() {
         <h1 className="font-extrabold text-[32px] md:text-5xl mb-4 md:mb-10">
           BROWSE BY DRESS STYLE
         </h1>
-        <div className="grid grid-rows-4 gap-2 sm:grid-cols-3 sm:grid-rows-2 md:grid-cols-3 md:grid-rows-2 md:gap-3 text-left">
+        <div className="grid grid-rows-4 gap-2  md:grid-cols-3 md:grid-rows-2 md:gap-3 text-left">
           <div className="bg-white h-[170px] sm:h-[209px] md:h-[209px] rounded-lg text-2xl font-semibold md:text-3xl p-[1em] relative cursor-pointer hover:scale-[1.01] md:hover:scale-[1.02] transition-transform duration-100">
             <p className="absolute z-10 text-1xl font-semibold sm:text-xl lg:text-3xl">
               CASUAL
@@ -18,7 +16,7 @@ export default function BrowseByStyle() {
               className="w-full h-full absolute top-0 bottom-0 right-0 left-0 rounded-lg"
             />
           </div>
-          <div className="bg-white md:col-span-2 sm:col-span-2 md:h-[209px] rounded-lg text-2xl font-semibold md:text-3xl p-[1em] relative cursor-pointer hover:scale-[1.01] md:hover:scale-[1.02] transition-transform duration-100">
+          <div className="bg-white md:col-span-2 md:h-[209px] rounded-lg text-2xl font-semibold md:text-3xl p-[1em] relative cursor-pointer hover:scale-[1.01] md:hover:scale-[1.02] transition-transform duration-100">
             <p className="absolute z-10 text-2xl font-semibold sm:text-xl lg:text-3xl">
               Formal
             </p>
@@ -28,7 +26,7 @@ export default function BrowseByStyle() {
               className="w-full h-full absolute top-0 bottom-0 right-0 left-0 rounded-lg"
             />
           </div>
-          <div className="bg-white md:col-span-2 sm:col-span-2 md:h-[209px] rounded-lg text-2xl font-semibold md:text-3xl p-[1em] relative cursor-pointer hover:scale-[1.01] md:hover:scale-[1.02] transition-transform duration-100">
+          <div className="bg-white md:col-span-2  md:h-[209px] rounded-lg text-2xl font-semibold md:text-3xl p-[1em] relative cursor-pointer hover:scale-[1.01] md:hover:scale-[1.02] transition-transform duration-100">
             <p className="absolute z-10 text-2xl font-semibold sm:text-xl lg:text-3xl">
               Party
             </p>

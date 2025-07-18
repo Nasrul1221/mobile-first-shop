@@ -26,7 +26,9 @@ export default function Header() {
       </button>
 
       <div className="flex items-center justify-between w-full h-full">
-        <h1 className="font-bold text-2xl md:text-3xl">SHOP.CO</h1>
+        <NavLink to="/" className="font-bold text-2xl md:text-3xl">
+          SHOP.CO
+        </NavLink>
 
         <nav className="flex mx-3">
           <ul
