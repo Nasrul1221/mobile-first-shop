@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TitlePage() {
   return (
-    <section className="bg-[#F2F0F1] h-full w-full md:max-h-[663px] pt-5 pl-5 pr-5 md:pt-0 md:pl-10 md:pr-10 md:grid md:grid-cols-2 gap-x-3">
+    <section className="bg-[#F2F0F1] h-full w-full md:max-h-[663px] pt-5 pl-5 pr-5 md:pt-0 md:pl-10 md:grid md:grid-cols-2 gap-x-3">
       <div className="flex flex-col gap-y-16">
         <div>
           <h1 className="text-4xl md:text-[48px] lg:text-[64px] font-extrabold w-[315px] md:max-w-[577px] md:w-full leading-[34px] md:leading-[64px] mt-7 overflow-hidden">
