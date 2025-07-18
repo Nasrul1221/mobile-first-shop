@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function SharedLayout() {
   return (
@@ -9,6 +10,8 @@ export default function SharedLayout() {
       <main className="pt-20">
         <Outlet />
       </main>
+
+      <Footer />
     </div>
   );
 }
