@@ -12,7 +12,7 @@ export default function BrowseByStyle() {
             </p>
             <img
               alt="A model in casual clothes"
-              src="/casual.png"
+              src={`${import.meta.env.BASE_URL}/casual.png`}
               className="w-full h-full absolute top-0 bottom-0 right-0 left-0 rounded-lg"
             />
           </div>
@@ -21,8 +21,8 @@ export default function BrowseByStyle() {
               Formal
             </p>
             <img
-              alt="A model in casual clothes"
-              src="/formal.png"
+              alt="A model in formal clothes"
+              src={`${import.meta.env.BASE_URL}/formal.png`}
               className="w-full h-full absolute top-0 bottom-0 right-0 left-0 rounded-lg"
             />
           </div>
@@ -31,8 +31,8 @@ export default function BrowseByStyle() {
               Party
             </p>
             <img
-              alt="A model in casual clothes"
-              src="/party.png"
+              alt="A model in party clothes"
+              src={`${import.meta.env.BASE_URL}/party.png`}
               className="w-full h-full absolute top-0 bottom-0 right-0 left-0 rounded-lg"
             />
           </div>
@@ -41,8 +41,8 @@ export default function BrowseByStyle() {
               Gym
             </p>
             <img
-              alt="A model in casual clothes"
-              src="/gym.png"
+              alt="A model in gym clothes"
+              src={`${import.meta.env.BASE_URL}/gym.png`}
               className="w-full h-full absolute top-0 bottom-0 right-0 left-0 rounded-lg"
             />
           </div>

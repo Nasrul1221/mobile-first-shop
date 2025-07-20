@@ -8,7 +8,10 @@ export default function Report({ rating, report, name, className }) {
         "border border-gray-200 rounded-xl px-7 py-5 max-w-[400px] w-full"
       )}
     >
-      <img src={`/ratings/rating-${rating}.png`} className="w-28" />
+      <img
+        src={`${import.meta.env.BASE_URL}/ratings/rating-${rating}.png`}
+        className="w-28"
+      />
       <div className="flex gap-x-2 items-center md:text-xl font-bold mt-3">
         <h1>{name}</h1>
         <svg

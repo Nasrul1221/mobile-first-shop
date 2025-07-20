@@ -14,7 +14,9 @@ export default function ProductCard({ product }) {
         <div className="flex items-center gap-x-2">
           <img
             className="w-[106px]"
-            src={`/ratings/rating-${averageRating}0.png`}
+            src={`${
+              import.meta.env.BASE_URL
+            }/ratings/rating-${averageRating}0.png`}
           />
           <p className="text-xs">
             {averageRating}/<span className="opacity-60">5</span>

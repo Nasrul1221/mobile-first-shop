@@ -43,16 +43,32 @@ export default function Footer() {
           </p>
           <div className="flex gap-x-3">
             <div className="border border-gray-300 rounded-full bg-white w-7 h-7 flex justify-center">
-              <img src="/logos/x.svg" width="13" alt="X icon" />
+              <img
+                src={`${import.meta.env.BASE_URL}/logos/x.svg`}
+                width="13"
+                alt="X icon"
+              />
             </div>
             <div className="rounded-full bg-black w-7 h-7 flex justify-center">
-              <img src="/logos/facebook.svg" width="17" alt="X icon" />
+              <img
+                src={`${import.meta.env.BASE_URL}/logos/facebook.svg`}
+                width="17"
+                alt="X icon"
+              />
             </div>
             <div className="border border-gray-300 rounded-full bg-white w-7 h-7 flex justify-center">
-              <img src="/logos/instagram.svg" width="13" alt="X icon" />
+              <img
+                src={`${import.meta.env.BASE_URL}/logos/instagram.svg`}
+                width="13"
+                alt="X icon"
+              />
             </div>
             <div className="border border-gray-300 rounded-full bg-white w-7 h-7 flex justify-center">
-              <img src="/logos/github.svg" width="13" alt="X icon" />
+              <img
+                src={`${import.meta.env.BASE_URL}/logos/github.svg`}
+                width="13"
+                alt="X icon"
+              />
             </div>
           </div>
         </div>

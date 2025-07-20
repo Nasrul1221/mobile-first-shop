@@ -41,7 +41,7 @@ export default function TitlePage() {
       <div className="max-h-[663px] max-w-full h-full md:w-full md:h-full">
         <img
           alt="Two fashion models pose"
-          src="/titlePage.png"
+          src={`${import.meta.env.BASE_URL}/titlePage.png`}
           className="h-full w-full"
         />
       </div>
