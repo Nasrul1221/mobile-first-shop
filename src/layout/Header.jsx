@@ -7,6 +7,18 @@ import "./styles.css";
 
 import MySearch from "../components/MySearch";
 
+// Shadcn UI
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPopUp, setIsPopUp] = useState(false);
@@ -37,7 +49,7 @@ export default function Header() {
             }`}
           >
             <li className="relative">
-              <div className="relative">
+              {/* <div className="relative">
                 <button
                   onClick={handlePopUp}
                   className={`text-md md:font-light md:text-nowrap after:content-[''] after:absolute after:w-2 after:h-2 after:border after:border-black after:border-t-transparent after:border-r-transparent after:-rotate-45 after:top-1/2 after:translate-x-[50%] after:translate-y-[-70%]`}
@@ -52,7 +64,25 @@ export default function Header() {
                   <p>Test</p>
                   <p>Test</p>
                 </div>
-              )}
+              )} */}
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
+                    <NavigationMenuContent className="flex flex-col p-3">
+                      <NavigationMenuLink asChild>
+                        <NavLink to="/cart">Cart</NavLink>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <NavLink to="/cart">Cart</NavLink>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <NavLink to="/cart">Cart</NavLink>
+                      </NavigationMenuLink>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
             </li>
             <li>
               <a href="#" className="text-md md:font-light md:text-nowrap">

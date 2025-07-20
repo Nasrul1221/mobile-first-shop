@@ -1,3 +1,8 @@
+import ApplePay from "@/components/Payments/ApplePay";
+import GooglePay from "@/components/Payments/GooglePay";
+import Mastercard from "@/components/Payments/Mastercard";
+import PayPal from "@/components/Payments/PayPal";
+import Visa from "@/components/Payments/Visa";
 import { Mail, Github } from "lucide-react";
 
 export default function Footer() {
@@ -92,11 +97,24 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-[#F0F0F0] h-full px-8 sm:px-14 md:px-[4.3rem] lg:px-28">
+      <div className="bg-[#F0F0F0] h-full px-8 sm:px-14 md:px-[4.3rem] lg:px-28 pb-24">
         <div className="w-full h-[1px] bg-gray-300 mb-5"></div>
 
-        <div className="text-center sm:text-left pb-20">
-          <p>© 2000-2021, All rights reserved</p>
+        <div className="flex flex-col items-center md:flex-row md:justify-between">
+          <div className="text-center sm:text-left mb-5 md:mb-0">
+            <p>© 2000-2021, All rights reserved</p>
+          </div>
+          <div className="flex gap-x-3">
+            <Visa />
+
+            <Mastercard />
+
+            <PayPal />
+
+            <ApplePay />
+
+            <GooglePay />
+          </div>
         </div>
       </div>
     </footer>
