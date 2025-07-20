@@ -14,6 +14,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/mobile-first-shop'
+  base: '/mobile-first-shop/'
 
 })
