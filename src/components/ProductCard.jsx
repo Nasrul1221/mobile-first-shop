@@ -2,7 +2,7 @@ export default function ProductCard({ product }) {
   const averageRating = Math.round(product.rating);
 
   return (
-    <div className="flex flex-col place-self-center">
+    <div className="flex flex-col place-self-center hover:bg-gray-50 p-1 rounded-lg cursor-pointer">
       <img
         src={product.images[0]}
         className="w-[180px]  md:w-[295px] rounded-lg bg-[#F0EEED]"

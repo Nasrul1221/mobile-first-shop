@@ -6,12 +6,12 @@ export default function PayPal() {
       <svg
         xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         version="1.1"
         id="Layer_1"
         viewBox="0 0 780 501"
-        enable-background="new 0 0 780 501"
-        xml:space="preserve"
+        enableBackground="new 0 0 780 501"
+        xmlSpace="preserve"
         className="w-10 md:w-12"
       >
         <title>amex-outline</title>

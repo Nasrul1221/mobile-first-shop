@@ -49,29 +49,13 @@ export default function Header() {
             }`}
           >
             <li className="relative">
-              {/* <div className="relative">
-                <button
-                  onClick={handlePopUp}
-                  className={`text-md md:font-light md:text-nowrap after:content-[''] after:absolute after:w-2 after:h-2 after:border after:border-black after:border-t-transparent after:border-r-transparent after:-rotate-45 after:top-1/2 after:translate-x-[50%] after:translate-y-[-70%]`}
-                >
-                  Shop
-                </button>
-              </div>
-              {isPopUp && (
-                <div className="w-7 h-20 md:absolute md:top-1/2 md:translate-x-[50%] md:translate-y-[20%] flex flex-col items-center md:bg-white">
-                  <p>Test</p>
-                  <p>Test</p>
-                  <p>Test</p>
-                  <p>Test</p>
-                </div>
-              )} */}
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
                     <NavigationMenuContent className="flex flex-col p-3">
                       <NavigationMenuLink asChild>
-                        <NavLink to="/cart">Cart</NavLink>
+                        <NavLink to="/products">Products</NavLink>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <NavLink to="/cart">Cart</NavLink>
