@@ -29,20 +29,10 @@ export default function Products() {
   };
 
   return (
-    <div className="px-4 sm:px-8 md:px-14">
-      {/* <div
-        className={`
-          fixed left-0 right-0 bottom-0 top-32
-          bg-red-300
-          transform transition-transform duration-300 z-50
-          ${isOpen ? "translate-y-0" : "translate-y-full"}
-        `}
-      >
-        Filters
-      </div> */}
+    <div className="px-4 sm:px-8 md:px-10 justify-center">
       <div className="w-full h-[1px] bg-gray-200 mb-4"></div>
       <Breadcrumbs />
-      <div className="flex mt-1 sm:mt-3">
+      <div className="flex mt-1 sm:mt-3 justify-center">
         <Filters isOpen={isOpen} handleClose={handleClose} />
         <section className="p-1 xs:ml-3 md:ml-4">
           <div className="flex items-center mb-5 justify-between">
@@ -60,7 +50,9 @@ export default function Products() {
                 </span>
               </p>
             </div>
-            <SlidersVertical onClick={handleOpen} className="md:hidden" />
+            <div className="w-8 h-8 bg-[#F0F0F0] rounded-full flex justify-center items-center md:hidden">
+              <SlidersVertical onClick={handleOpen} className="md:hidden w-4" />
+            </div>
           </div>
           <div className="flex flex-col items-center">
             {loading ? (

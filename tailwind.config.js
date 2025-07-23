@@ -7,15 +7,15 @@ export default {
   ],
   theme: {
   	extend: {
-		screens: {
-			'xxs': '320px',
-			'xs': '475px',
-			'sm': '640px',   
-			'md': '768px',   
-			'lg': '1024px',  
-			'xl': '1280px',  
-			'2xl': '1536px', 
-			},
+  		screens: {
+  			xxs: '320px',
+  			xs: '475px',
+  			sm: '640px',
+  			md: '768px',
+  			lg: '1024px',
+  			xl: '1280px',
+  			'2xl': '1536px'
+  		},
   		fontFamily: {
   			sans: [
   				'Roboto',
@@ -23,7 +23,9 @@ export default {
   			]
   		},
   		animation: {
-  			'load-spin': 'load 1s linear infinite'
+  			'load-spin': 'load 1s linear infinite',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		keyframes: {
   			load: {
@@ -32,6 +34,22 @@ export default {
   				},
   				'100%': {
   					transform: 'rotate(360deg)'
+  				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
   				}
   			}
   		},
