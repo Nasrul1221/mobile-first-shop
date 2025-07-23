@@ -2,7 +2,7 @@ export default function ProductCard({ product }) {
   const averageRating = Math.round(product.rating);
 
   return (
-    <div className="flex flex-col place-self-center hover:bg-gray-50 p-1 rounded-lg cursor-pointer">
+    <div className="flex flex-col place-self-center hover:bg-gray-50 rounded-lg cursor-pointer">
       <img
         src={product.images[0]}
         className="w-[180px]  md:w-[295px] rounded-lg bg-[#F0EEED]"
@@ -13,7 +13,7 @@ export default function ProductCard({ product }) {
         </strong>
         <div className="flex items-center gap-x-2">
           <img
-            className="w-[106px]"
+            className="w-[87px] sm:w-[95px] md:w-[106px]"
             src={`${
               import.meta.env.BASE_URL
             }/ratings/rating-${averageRating}0.png`}

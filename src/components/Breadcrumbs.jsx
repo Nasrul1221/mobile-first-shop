@@ -10,8 +10,8 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <nav className="ml-2 flex gap-x-2">
-      <NavLink to="/" className="opacity-60">
+    <nav className="ml-2 flex gap-x-2 items-center">
+      <NavLink to="/" className="opacity-60 text-sm sm:text-base">
         Home
       </NavLink>
       {pathnames.map((value, index) => {
@@ -25,7 +25,7 @@ export default function Breadcrumbs() {
               to={to}
               className={`${
                 pathnames.length - 1 === index ? "" : "opacity-60"
-              } ml-2`}
+              } ml-2 text-sm sm:text-base`}
             >
               {toCapital(name)}
             </NavLink>
