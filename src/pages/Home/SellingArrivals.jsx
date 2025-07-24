@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from "react";
-import { useFetch } from "../../hooks/useFetch";
+import { useContext } from "react";
 import Load from "../../components/Load";
 import ProductCard from "../../components/ProductCard";
 import { NavLink } from "react-router-dom";
@@ -21,7 +20,7 @@ export default function SellingArrivals() {
             </div>
           ) : (
             newArrivals.map((product) => (
-              <NavLink key={product.id} to={`/products/:${product.id}`}>
+              <NavLink key={product.id} to={`/products/${product.id}`}>
                 <ProductCard key={product.id} product={product} />
               </NavLink>
             ))
@@ -44,7 +43,7 @@ export default function SellingArrivals() {
             </div>
           ) : (
             topSelling.map((product) => (
-              <NavLink key={product.id} to={`/products/:${product.id}`}>
+              <NavLink key={product.id} to={`/products/${product.id}`}>
                 <ProductCard key={product.id} product={product} />
               </NavLink>
             ))

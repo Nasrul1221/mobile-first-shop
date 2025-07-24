@@ -14,6 +14,7 @@ import ProductCard from "@/components/ProductCard";
 // Icons
 import { SlidersVertical } from "lucide-react";
 import Filters from "./Products/Filters";
+import { NavLink } from "react-router-dom";
 
 export default function Products() {
   const { loading } = useContext(FilteredProducts);
@@ -60,7 +61,9 @@ export default function Products() {
             ) : (
               <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3">
                 {paginatedProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <NavLink key={product.id} to={`/products/${product.id}`}>
+                    <ProductCard product={product} />
+                  </NavLink>
                 ))}
               </div>
             )}

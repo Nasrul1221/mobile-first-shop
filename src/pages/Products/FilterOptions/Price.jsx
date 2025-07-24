@@ -24,7 +24,7 @@ export default function Price() {
             min={1}
             max={10000}
             step={1}
-            className="mt-4"
+            className="my-4"
           />
         </AccordionContent>
       </AccordionItem>
