@@ -1,37 +1,17 @@
-// Icons
+// Style classes
 import clsx from "clsx";
+
+// Icons
 import { SlidersVertical } from "lucide-react";
 
-// Shadcn UI
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Slider } from "@/components/ui/slider";
-import { useState } from "react";
-
-const accordionData = [
-  {
-    label: "T-Shirts",
-  },
-  {
-    label: "Shorts",
-  },
-  {
-    label: "Shirts",
-  },
-  {
-    label: "Hoodie",
-  },
-  {
-    label: "Jeans",
-  },
-];
+// Components
+import Clothes from "./FilterOptions/Clothes";
+import Price from "./FilterOptions/Price";
+import Colors from "./FilterOptions/Colors";
+import Size from "./FilterOptions/Size";
+import DressStyle from "./FilterOptions/DressStyle";
 
 export default function Filters({ className, isOpen, handleClose }) {
-  const [sliderValue, setSliderValue] = useState(null);
   return (
     <div className="md:w-[295px]">
       {isOpen && (
@@ -46,30 +26,36 @@ export default function Filters({ className, isOpen, handleClose }) {
         )}
       >
         <div className="flex items-center justify-between">
-          <h1 className="text-xl">Filters</h1>
+          <h1 className="text-xl font-medium">Filters</h1>
           <button className="md:hidden" onClick={handleClose}>
             Close
           </button>
           <SlidersVertical className="hidden md:block opacity-40" />
         </div>
 
-        <Accordion type="single" collapsible>
-          {accordionData.map((e, i) => (
-            <AccordionItem key={i} value={e.label}>
-              <AccordionTrigger className="opacity-60">
-                {e.label}
-              </AccordionTrigger>
-              <AccordionContent>123123123123123123123</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-        <div>
-          <Slider
-            onValueChange={(value) => setSliderValue(value)}
-            value={sliderValue}
-            defaultValue={[5]}
-          />
-        </div>
+        <div className="w-full h-[1px] bg-gray-200 mt-4"></div>
+
+        <Clothes />
+
+        <div className="w-full h-[1px] bg-gray-200 mb-4"></div>
+
+        <Price />
+
+        <div className="w-full h-[1px] bg-gray-200 mt-4"></div>
+
+        <Colors />
+
+        <div className="w-full h-[1px] bg-gray-200 mt-4"></div>
+
+        <Size />
+
+        <div className="w-full h-[1px] bg-gray-200 mt-4"></div>
+
+        <DressStyle />
+
+        <button className="w-full border-[2px] border-black bg-black text-white py-2 rounded-full hover:bg-white hover:text-black active:bg-black active:text-white transition-colors duration-200">
+          Apply Filter
+        </button>
       </section>
     </div>
   );
