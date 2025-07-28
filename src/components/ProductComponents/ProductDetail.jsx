@@ -47,13 +47,13 @@ export default function ProductDetail() {
       {loading ? (
         <ProductDetailsSkeleton />
       ) : (
-        <div className="mt-3">
-          <div className="flex flex-col items-center">
+        <div className="mt-3 md:flex">
+          <div className="flex flex-col items-center md:flex-row">
             <img
               src={product?.images?.[chosenImg]}
-              className="rounded-2xl bg-[#F0EEED]"
+              className="rounded-2xl bg-[#F0EEED] md:max-w-[444px] md:order-2"
             />
-            <div className="flex gap-5 mt-3">
+            <div className="grid grid-cols-3 gap-5 mt-3 md:order-1 md:grid-rows-3 md:grid-cols-1">
               {product?.images?.map((image, index) => {
                 if (index < 3) {
                   return (
@@ -72,6 +72,7 @@ export default function ProductDetail() {
               })}
             </div>
           </div>
+          <div>Info</div>
         </div>
       )}
     </div>

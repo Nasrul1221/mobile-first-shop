@@ -43,7 +43,7 @@ export default function Products() {
       <Breadcrumbs />
       <div className="flex mt-1 sm:mt-3 justify-center">
         <Filters isOpen={isOpen} handleClose={handleClose} />
-        <section className="p-1 xs:ml-3 md:ml-4 ">
+        <section className="p-1 xs:ml-3 md:ml-4 flex-1">
           <div className="flex items-center mb-5 justify-between">
             <div className="flex items-center md:justify-between md:w-full">
               <h1 className="text-2xl sm:text-[28px] md:text-[32px] font-bold">
@@ -63,15 +63,15 @@ export default function Products() {
               <SlidersVertical onClick={handleOpen} className="md:hidden w-4" />
             </div>
           </div>
-          <div className="flex flex-col items-center ">
-            {test ? (
+          <div className="flex flex-col items-center">
+            {loading ? (
               <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3 w-full">
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((s) => (
                   <ProductSkeleton key={s} />
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3 w-full">
                 {paginatedProducts.map((product) => (
                   <NavLink key={product.id} to={`/products/${product.id}`}>
                     <ProductCard product={product} />
