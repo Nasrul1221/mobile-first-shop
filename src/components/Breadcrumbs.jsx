@@ -10,7 +10,7 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <nav className="ml-2 flex gap-x-2 items-center">
+    <nav className="flex gap-x-2 items-center">
       <NavLink to="/" className="opacity-60 text-sm sm:text-base">
         Home
       </NavLink>

@@ -2,24 +2,30 @@
 import { FilteredProducts } from "@/Contexts/FilteredProductContext";
 
 // React && Custon hooks
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import usePagination from "@/hooks/usePagination";
 
 // Components
 import Load from "@/components/Load";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Pagination from "@/components/Pagination";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ProductComponents/ProductCard";
 
 // Icons
 import { SlidersVertical } from "lucide-react";
 import Filters from "./Products/Filters";
 import { NavLink } from "react-router-dom";
 
+// Utils
+import { scrollToTop } from "@/utils";
+import ProductSkeleton from "@/components/ProductComponents/ProductSkeleton";
+
 export default function Products() {
   const { loading } = useContext(FilteredProducts);
   const { paginatedProducts, totalPages } = usePagination();
   const [isOpen, setIsOpen] = useState(false);
+
+  const test = true;
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -29,13 +35,15 @@ export default function Products() {
     setIsOpen(false);
   };
 
+  useEffect(() => scrollToTop(), []);
+
   return (
     <div className="px-4 sm:px-8 md:px-10 justify-center">
       <div className="w-full h-[1px] bg-gray-200 mb-4"></div>
       <Breadcrumbs />
       <div className="flex mt-1 sm:mt-3 justify-center">
         <Filters isOpen={isOpen} handleClose={handleClose} />
-        <section className="p-1 xs:ml-3 md:ml-4">
+        <section className="p-1 xs:ml-3 md:ml-4 ">
           <div className="flex items-center mb-5 justify-between">
             <div className="flex items-center md:justify-between md:w-full">
               <h1 className="text-2xl sm:text-[28px] md:text-[32px] font-bold">
@@ -55,9 +63,13 @@ export default function Products() {
               <SlidersVertical onClick={handleOpen} className="md:hidden w-4" />
             </div>
           </div>
-          <div className="flex flex-col items-center">
-            {loading ? (
-              <Load />
+          <div className="flex flex-col items-center ">
+            {test ? (
+              <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3 w-full">
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((s) => (
+                  <ProductSkeleton key={s} />
+                ))}
+              </div>
             ) : (
               <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3">
                 {paginatedProducts.map((product) => (

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Load from "../../components/Load";
-import ProductCard from "../../components/ProductCard";
+import ProductCard from "../../components/ProductComponents/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FilteredProducts } from "@/Contexts/FilteredProductContext";
 
