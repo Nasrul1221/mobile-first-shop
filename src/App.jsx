@@ -3,7 +3,7 @@ import "./index.css";
 import { Outlet, useRoutes } from "react-router-dom";
 import SharedLayout from "./layout/SharedLayout";
 import Home from "./pages/Home";
-import ProductDetail from "./components/ProductComponents/ProductDetail";
+import ProductDetail from "./pages/Products/ProductDetail";
 import Products from "./pages/Products";
 
 export default function App() {

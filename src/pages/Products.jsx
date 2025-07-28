@@ -25,8 +25,6 @@ export default function Products() {
   const { paginatedProducts, totalPages } = usePagination();
   const [isOpen, setIsOpen] = useState(false);
 
-  const test = true;
-
   const handleOpen = () => {
     setIsOpen(true);
   };
