@@ -13,15 +13,16 @@ import { FilteredProducts } from "@/Contexts/FilteredProductContext";
 // Utils
 import { scrollToTop } from "@/utils";
 import ProductDetailsSkeleton from "../../components/ProductComponents/ProductDetailsSkeleton";
-import Description from "./ProductDetailComps/Description";
+import MainDetails from "./ProductDetailComps/MainDetails";
+import AdditionalDetails from "./ProductDetailComps/AdditionalDetails";
+import ProductAdditional from "./ProductDetailComps/ProductAdditional";
 
 export default function ProductDetail() {
   const { productID } = useParams();
   const { products, loading } = useContext(FilteredProducts);
 
   const [product, setProduct] = useState({});
-
-  const test = true;
+  const [comp, setComp] = useState(ProductAdditional);
 
   useEffect(() => {
     if (products.length && productID) {
@@ -44,8 +45,9 @@ export default function ProductDetail() {
         <ProductDetailsSkeleton />
       ) : (
         <div>
-          <Description product={product} />
-          <div className="w-full h-[1px] bg-gray-200 mt-4" />
+          <MainDetails product={product} />
+
+          <AdditionalDetails>{comp}</AdditionalDetails>
         </div>
       )}
     </div>
