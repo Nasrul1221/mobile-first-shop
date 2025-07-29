@@ -1,6 +1,12 @@
 import clsx from "clsx";
 
-export default function Report({ rating, report, name, className }) {
+export default function Report({
+  rating,
+  report,
+  name,
+  email = "",
+  className,
+}) {
   return (
     <div
       className={clsx(
@@ -9,7 +15,9 @@ export default function Report({ rating, report, name, className }) {
       )}
     >
       <img
-        src={`${import.meta.env.BASE_URL}/ratings/rating-${rating}.png`}
+        src={`${import.meta.env.BASE_URL}/ratings/rating-${Math.round(
+          rating
+        )}0.png`}
         className="w-28"
       />
       <div className="flex gap-x-2 items-center md:text-xl font-bold mt-3">
@@ -33,6 +41,8 @@ export default function Report({ rating, report, name, className }) {
         </svg>
       </div>
       <p className="text-gray-400">{report}</p>
+
+      {email && <p className="text-gray-500 break-words">{email}</p>}
     </div>
   );
 }

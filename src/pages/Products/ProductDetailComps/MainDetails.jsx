@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import { useState } from "react";
 
 export default function MainDetails({ product }) {
@@ -67,18 +68,10 @@ export default function MainDetails({ product }) {
         <div>
           <p className="text-sm opacity-60">Choose size</p>
           <div className="flex flex-wrap items-center gap-3 mt-3">
-            <button className="bg-[#F0F0F0] px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-colors duration-150">
-              Small
-            </button>
-            <button className="bg-[#F0F0F0] px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-colors duration-150">
-              Medium
-            </button>
-            <button className="bg-[#F0F0F0] px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-colors duration-150">
-              Large
-            </button>
-            <button className="bg-[#F0F0F0] px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-colors duration-150">
-              X-Large
-            </button>
+            <Button>Small</Button>
+            <Button>Medium</Button>
+            <Button>Large</Button>
+            <Button>X-Large</Button>
           </div>
         </div>
 
@@ -94,9 +87,9 @@ export default function MainDetails({ product }) {
               <button>+</button>
             </div>
           </div>
-          <button className="max-w-full w-full bg-black text-white rounded-full border border-black hover:bg-white hover:text-black">
+          <Button variant="defaultReversed" className="w-full">
             Add to Cart
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -9,6 +9,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+// Components
+import Button from "@/components/Button";
+
 const sizes = [
   {
     size: "XX-Small",
@@ -53,16 +56,19 @@ export default function Size() {
           <AccordionTrigger className="text-xl">Size</AccordionTrigger>
           <AccordionContent className="flex flex-wrap gap-2">
             {sizes.map((size) => (
-              <button
-                className="bg-[#F0F0F0] px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-colors duration-150"
-                style={{
-                  background: size.size === selectedSize && "black",
-                  color: size.size === selectedSize && "white",
-                }}
-                onClick={() => handleClick(size.size)}
-              >
+              // <button
+              //   className="bg-[#F0F0F0] px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-colors duration-150"
+              //   style={{
+              //     background: size.size === selectedSize && "black",
+              //     color: size.size === selectedSize && "white",
+              //   }}
+              //   onClick={() => handleClick(size.size)}
+              // >
+              //   {size.size}
+              // </button>
+              <Button variant="default" onClick={() => handleClick(size.size)}>
                 {size.size}
-              </button>
+              </Button>
             ))}
           </AccordionContent>
         </AccordionItem>

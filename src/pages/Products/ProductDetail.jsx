@@ -44,10 +44,12 @@ export default function ProductDetail() {
       {loading ? (
         <ProductDetailsSkeleton />
       ) : (
-        <div>
+        <div className="w-full">
           <MainDetails product={product} />
 
           <AdditionalDetails>{comp}</AdditionalDetails>
+
+          
         </div>
       )}
     </div>

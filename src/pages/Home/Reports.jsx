@@ -47,18 +47,18 @@ export default function Reports() {
       </div>
       <div className="flex justify-center gap-x-3 px-5 sm:px-12 md:px-20 lg:px-32 mt-4 md:mt-7 ">
         <Report
-          rating={50}
+          rating={5}
           name="Sarah M."
           report="I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."
         />
         <Report
-          rating={50}
+          rating={5}
           name="Sarah M."
           report="I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."
           className="hidden sm:block"
         />
         <Report
-          rating={50}
+          rating={5}
           name="Sarah M."
           report="I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."
           className="hidden md:block"
