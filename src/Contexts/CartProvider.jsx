@@ -1,4 +1,4 @@
-import React, { act, useReducer } from "react";
+import React, { useReducer } from "react";
 import { CartContext } from "./CartContext";
 
 const initialState = { cart: [] };
@@ -28,6 +28,12 @@ function reducer(state, action) {
         cart: [...state.cart, action.payload],
       };
     }
+
+    case "DELETE_FROM_CART":
+      return {
+        ...state,
+        cart: state.cart.filter((product) => product.id !== action.payload.id),
+      };
 
     case "INCREASE_QUANTITY":
       return {
