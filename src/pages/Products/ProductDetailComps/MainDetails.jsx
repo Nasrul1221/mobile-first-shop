@@ -1,8 +1,15 @@
 import Button from "@/components/Button";
-import { useState } from "react";
+import { CartContext } from "@/Contexts/CartContext";
+import { useContext, useEffect, useState } from "react";
 
 export default function MainDetails({ product }) {
   const [chosenImg, setChosenImg] = useState(0);
+  const [count, setCount] = useState(1);
+  const { state, dispatch } = useContext(CartContext);
+
+  useEffect(() => {
+    console.log(state.cart);
+  }, [state.cart]);
 
   const changeImage = (index) => {
     setChosenImg(index);
@@ -80,14 +87,33 @@ export default function MainDetails({ product }) {
         <div className="flex gap-x-2 justify-between">
           <div className="flex bg-[#F0F0F0] items-center gap-x-4 px-4 py-1 rounded-full">
             <div className="text-2xl">
-              <button>—</button>
+              <button
+                onClick={() => setCount((prev) => (prev > 1 ? prev - 1 : prev))}
+              >
+                —
+              </button>
             </div>
-            <div className="text-md">1</div>
+            <div className="text-md">{count}</div>
             <div className="text-2xl">
-              <button>+</button>
+              <button onClick={() => setCount((prev) => prev + 1)}>+</button>
             </div>
           </div>
-          <Button variant="defaultReversed" className="w-full">
+          <Button
+            variant="defaultReversed"
+            className="w-full"
+            onClick={() =>
+              dispatch({
+                type: "ADD",
+                payload: {
+                  thumbnail: product.images[0],
+                  title: product.title,
+                  price: product.price,
+                  id: product.id,
+                  quantity: count,
+                },
+              })
+            }
+          >
             Add to Cart
           </Button>
         </div>

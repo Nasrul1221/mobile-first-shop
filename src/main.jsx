@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import FilteredProductsProvider from "./Contexts/FilteredProductsProvider";
+import CartProvider from "./Contexts/CartProvider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HashRouter>
-      <FilteredProductsProvider>
-        <App />
-      </FilteredProductsProvider>
+      <CartProvider>
+        <FilteredProductsProvider>
+          <App />
+        </FilteredProductsProvider>
+      </CartProvider>
     </HashRouter>
   </StrictMode>
 );

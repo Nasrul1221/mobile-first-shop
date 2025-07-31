@@ -22,7 +22,6 @@ export default function ProductDetail() {
   const { products, loading } = useContext(FilteredProducts);
 
   const [product, setProduct] = useState({});
-  const [comp, setComp] = useState(ProductAdditional);
 
   useEffect(() => {
     if (products.length && productID) {
@@ -31,7 +30,6 @@ export default function ProductDetail() {
       );
 
       setProduct(foundProduct);
-      console.log(product);
     }
   }, [products]);
 
@@ -47,9 +45,7 @@ export default function ProductDetail() {
         <div className="w-full">
           <MainDetails product={product} />
 
-          <AdditionalDetails>{comp}</AdditionalDetails>
-
-          
+          <AdditionalDetails />
         </div>
       )}
     </div>

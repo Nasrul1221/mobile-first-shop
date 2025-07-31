@@ -5,6 +5,7 @@ import SharedLayout from "./layout/SharedLayout";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/Products/ProductDetail";
 import Products from "./pages/Products";
+import Cart from "./pages/Cart";
 
 export default function App() {
   const router = useRoutes([
@@ -13,7 +14,7 @@ export default function App() {
       element: <SharedLayout />,
       children: [
         { index: true, element: <Home /> },
-        { path: "/cart", element: <p>Cart</p> },
+        { path: "/cart", element: <Cart /> },
         { path: "/profile", element: <p>Profile</p> },
         {
           path: "/products",

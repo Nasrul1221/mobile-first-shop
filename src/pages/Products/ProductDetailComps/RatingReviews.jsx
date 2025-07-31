@@ -46,13 +46,13 @@ export default function RatingReviews() {
             Latest
           </div> */}
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger asChild className="hidden md:block">
               <Button className="font-medium">
                 {position.charAt(0).toUpperCase() +
                   position.slice(1, position.length)}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="hidden md:block">
               <DropdownMenuRadioGroup
                 value={position}
                 onValueChange={setPosition}

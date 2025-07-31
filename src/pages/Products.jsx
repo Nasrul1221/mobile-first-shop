@@ -36,7 +36,7 @@ export default function Products() {
   useEffect(() => scrollToTop(), []);
 
   return (
-    <div className="px-4 sm:px-8 md:px-10 justify-center">
+    <div className="px-4 sm:px-8 md:px-10 lg:px-20 justify-center">
       <div className="w-full h-[1px] bg-gray-200 mb-4"></div>
       <Breadcrumbs />
       <div className="flex mt-1 sm:mt-3 justify-center">
