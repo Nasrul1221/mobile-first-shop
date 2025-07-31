@@ -1,7 +1,15 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { CartContext } from "./CartContext";
 
-const initialState = { cart: [] };
+const initialState = {
+  cart: JSON.parse(localStorage.getItem("cart")) || [],
+  cartTotal: {
+    subTotal: 0,
+    discount: 0,
+    deliveryFee: 15,
+    total: 0,
+  },
+};
 
 function reducer(state, action) {
   switch (action.type) {
@@ -57,6 +65,26 @@ function reducer(state, action) {
         ),
       };
 
+    case "GET_TOTAL": {
+      const subTotal = state.cart.reduce(
+        (accumulator, currentValue) =>
+          accumulator + currentValue.price * currentValue.quantity,
+        0
+      );
+
+      return {
+        ...state,
+        cartTotal: {
+          ...state.cartTotal,
+          subTotal: subTotal,
+          total: subTotal + state.cartTotal.deliveryFee,
+        },
+      };
+    }
+
+    default:
+      return state;
+
     // return {
     //   ...state,
     //   cart: [...state.cart,  ],
@@ -67,5 +95,10 @@ function reducer(state, action) {
 export default function CartProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { state, dispatch };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart]);
+
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
