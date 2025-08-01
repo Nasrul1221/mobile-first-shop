@@ -14,15 +14,18 @@ import ProductCard from "@/components/ProductComponents/ProductCard";
 // Icons
 import { SlidersVertical } from "lucide-react";
 import Filters from "./Products/Filters";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 
 // Utils
 import { scrollToTop } from "@/utils";
 import ProductSkeleton from "@/components/ProductComponents/ProductSkeleton";
 
 export default function Products() {
-  const { loading } = useContext(FilteredProducts);
-  const { paginatedProducts, totalPages } = usePagination();
+  const { products, loading } = useContext(FilteredProducts);
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category") || "all";
+
+  const { paginatedProducts, totalPages } = usePagination(category);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -70,7 +73,7 @@ export default function Products() {
               </div>
             ) : (
               <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-3 gap-3 w-full">
-                {paginatedProducts.map((product) => (
+                {paginatedProducts?.map((product) => (
                   <NavLink key={product.id} to={`/products/${product.id}`}>
                     <ProductCard product={product} />
                   </NavLink>

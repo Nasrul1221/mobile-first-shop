@@ -3,6 +3,7 @@ import Load from "../../components/Load";
 import ProductCard from "../../components/ProductComponents/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FilteredProducts } from "@/Contexts/FilteredProductContext";
+import Button from "@/components/Button";
 
 export default function SellingArrivals() {
   const { newArrivals, topSelling, loading } = useContext(FilteredProducts);
@@ -19,16 +20,21 @@ export default function SellingArrivals() {
               <Load />
             </div>
           ) : (
-            newArrivals.map((product) => (
+            newArrivals.slice(0, 4).map((product) => (
               <NavLink key={product.id} to={`/products/${product.id}`}>
                 <ProductCard key={product.id} product={product} />
               </NavLink>
             ))
           )}
         </div>
-        <button className="max-w-[358px] w-full h-[46px] md:max-w-[218px] border border-black border-opacity-15 rounded-full mb-10 md:mb-16 hover:bg-gray-100 transition-colors duration-200">
-          View all
-        </button>
+        <NavLink to="/products?category=new-arrivals">
+          <Button
+            variant="whiteBordered"
+            className="max-w-[358px] w-full h-[46px] md:max-w-[218px]"
+          >
+            View all
+          </Button>
+        </NavLink>
 
         <div className="w-full h-[1px] bg-gray-200 mb-10 md:mb-16"></div>
       </section>
@@ -42,7 +48,7 @@ export default function SellingArrivals() {
               <Load />
             </div>
           ) : (
-            topSelling.map((product) => (
+            topSelling.slice(0, 4).map((product) => (
               <NavLink key={product.id} to={`/products/${product.id}`}>
                 <ProductCard key={product.id} product={product} />
               </NavLink>
@@ -50,9 +56,14 @@ export default function SellingArrivals() {
           )}
         </div>
 
-        <button className="max-w-[358px] w-full h-[46px] md:max-w-[218px] border border-black border-opacity-15 rounded-full hover:bg-gray-100 transition-colors duration-200">
-          View all
-        </button>
+        <NavLink to="/products?category=top-selling">
+          <Button
+            variant="whiteBordered"
+            className="max-w-[358px] w-full h-[46px] md:max-w-[218px]"
+          >
+            View all
+          </Button>
+        </NavLink>
       </section>
     </div>
   );

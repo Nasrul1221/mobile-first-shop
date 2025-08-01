@@ -29,28 +29,28 @@ export default function CartCard({ data }) {
 
   return (
     <div className="flex gap-3">
-      <div className="bg-[#F0EEED] max-w-[100px] rounded-lg">
+      <div className="bg-[#F0EEED] max-w-[100px] md:max-w-[124px] rounded-lg">
         <img src={data.thumbnail} alt={data.title} />
       </div>
       <div className="w-full">
         <div className="flex flex-col">
           <div className="flex justify-between items-center">
-            <h2 className="font-bold">{data.title}</h2>
+            <h2 className="font-bold lg:text-xl">{data.title}</h2>
             <Trash2
-              className="text-red-500"
+              className="text-red-500 min-w-5 max-w-5"
               onClick={() =>
                 dispatch({ type: "DELETE_FROM_CART", payload: data })
               }
             />
           </div>
-          <p className="text-xs">
+          <p className="text-xs md:text-sm">
             Size: <span className="opacity-60">{size[randomIndex]}</span>
           </p>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2 flex-wrap mt-2">
           <p className="font-bold text-xl">${data.price}</p>
           <div className="flex bg-[#F0F0F0] items-center gap-x-4 px-4 py-1 rounded-full">
-            <div className="text-2xl">
+            <div className="text-xl">
               <button
                 onClick={() =>
                   dispatch({ type: "DECREASE_QUANTITY", payload: data })
@@ -60,7 +60,7 @@ export default function CartCard({ data }) {
               </button>
             </div>
             <div className="text-md">{data.quantity}</div>
-            <div className="text-2xl">
+            <div className="text-xl">
               <button
                 onClick={() =>
                   dispatch({ type: "INCREASE_QUANTITY", payload: data })

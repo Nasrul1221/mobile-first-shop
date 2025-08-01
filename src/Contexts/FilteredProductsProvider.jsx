@@ -34,7 +34,7 @@ export default function FilteredProductsProvider({ children }) {
       let randomIndexes = [];
 
       let i = 0;
-      while (i < 4) {
+      while (i < 10) {
         const randomIndex = Math.floor(Math.random() * filteredData.length);
         if (randomIndexes.includes(filteredData[randomIndex])) {
           continue;
@@ -51,7 +51,7 @@ export default function FilteredProductsProvider({ children }) {
       let randomIndexes = [];
 
       let i = 0;
-      while (i < 4) {
+      while (i < 10) {
         const randomIndex = Math.floor(Math.random() * filteredData.length);
 
         if (randomIndexes.includes(filteredData[randomIndex])) continue;
