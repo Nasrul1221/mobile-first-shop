@@ -21,11 +21,12 @@ import { scrollToTop } from "@/utils";
 import ProductSkeleton from "@/components/ProductComponents/ProductSkeleton";
 
 export default function Products() {
-  const { products, loading } = useContext(FilteredProducts);
+  const { loading } = useContext(FilteredProducts);
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category") || "all";
+  const q = searchParams.get("q") || null;
 
-  const { paginatedProducts, totalPages } = usePagination(category);
+  const { paginatedProducts, totalPages } = usePagination(category, q);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {

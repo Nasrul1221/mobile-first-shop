@@ -21,14 +21,9 @@ import {
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPopUp, setIsPopUp] = useState(false);
 
   const handleClick = () => {
     setIsOpen((prev) => !prev);
-  };
-
-  const handlePopUp = () => {
-    setIsPopUp((prev) => !prev);
   };
 
   return (
@@ -74,9 +69,12 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="#" className="text-md md:font-light md:text-nowrap">
+              <NavLink
+                to="/products?category=new-arrivals"
+                className="text-md md:font-light md:text-nowrap"
+              >
                 New Arrivals
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="#" className="text-md md:font-light md:text-nowrap">

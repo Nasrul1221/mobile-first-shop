@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductComponents/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FilteredProducts } from "@/Contexts/FilteredProductContext";
 import Button from "@/components/Button";
+import Break from "@/components/Break";
 
 export default function SellingArrivals() {
   const { newArrivals, topSelling, loading } = useContext(FilteredProducts);
@@ -30,13 +31,13 @@ export default function SellingArrivals() {
         <NavLink to="/products?category=new-arrivals">
           <Button
             variant="whiteBordered"
-            className="max-w-[358px] w-full h-[46px] md:max-w-[218px]"
+            className="max-w-[358px] w-full h-[46px] md:max-w-[218px] mt-3"
           >
             View all
           </Button>
         </NavLink>
 
-        <div className="w-full h-[1px] bg-gray-200 mb-10 md:mb-16"></div>
+        <Break />
       </section>
       <section className="text-center">
         <h1 className="font-extrabold text-[32px] md:text-5xl mb-4 md:mb-10">
@@ -59,7 +60,7 @@ export default function SellingArrivals() {
         <NavLink to="/products?category=top-selling">
           <Button
             variant="whiteBordered"
-            className="max-w-[358px] w-full h-[46px] md:max-w-[218px]"
+            className="max-w-[358px] w-full h-[46px] md:max-w-[218px] mt-3"
           >
             View all
           </Button>
