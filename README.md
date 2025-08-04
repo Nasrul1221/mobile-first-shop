@@ -1,12 +1,16 @@
-# React + Vite
+# E-Commerce website with a mobile-first approach
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I used this [design template](https://www.figma.com/design/itNlojnFpRJwGvosGzXSva/E-commerce-Website-Template--Freebie---Community-?node-id=0-1&p=f&t=ic7IQe0HGlmUasUa-0), so it is not mine.
+And for products, I used [DummyJSON](https://dummyjson.com/).
 
-Currently, two official plugins are available:
+## Details
+During my development, I encountered many pitfalls. I have not found the API I wanted to use. I needed only clothes; however, there is no such API, at least I have not found it.
+But I found a solution, and it was to filter all data. It is not a good idea, but I needed to just implement it. So then I encountered other obstacles, such a filtering products and so on.
+In conclusion, I understood that using the approach I use for data is not a good idea, but anyway, it works.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What I used here
+- React + Vite
+- Tailwind
+- ShadcnUI
+- Lucid Icons
+- React Router DOM
