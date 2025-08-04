@@ -37,7 +37,7 @@ export default function CartCard({ data }) {
           <div className="flex justify-between items-center">
             <h2 className="font-bold lg:text-xl">{data.title}</h2>
             <Trash2
-              className="text-red-500 min-w-5 max-w-5"
+              className="text-red-500 min-w-5 max-w-5 cursor-pointer"
               onClick={() =>
                 dispatch({ type: "DELETE_FROM_CART", payload: data })
               }

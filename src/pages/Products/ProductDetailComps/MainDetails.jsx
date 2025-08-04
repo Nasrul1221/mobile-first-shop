@@ -6,13 +6,31 @@ export default function MainDetails({ product }) {
   const [chosenImg, setChosenImg] = useState(0);
   const [count, setCount] = useState(1);
   const { state, dispatch } = useContext(CartContext);
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
-    console.log(state.cart);
-  }, [state.cart]);
+    const timeOut = setTimeout(() => setIsAdded(false), 2000);
+
+    return () => clearTimeout(timeOut);
+  }, [isAdded]);
 
   const changeImage = (index) => {
     setChosenImg(index);
+  };
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD",
+      payload: {
+        thumbnail: product.images[0],
+        title: product.title,
+        price: product.price,
+        id: product.id,
+        quantity: count,
+      },
+    });
+
+    setIsAdded(true);
   };
 
   return (
@@ -101,22 +119,18 @@ export default function MainDetails({ product }) {
           <Button
             variant="defaultReversed"
             className="w-full"
-            onClick={() =>
-              dispatch({
-                type: "ADD",
-                payload: {
-                  thumbnail: product.images[0],
-                  title: product.title,
-                  price: product.price,
-                  id: product.id,
-                  quantity: count,
-                },
-              })
-            }
+            onClick={handleAddToCart}
           >
             Add to Cart
           </Button>
         </div>
+      </div>
+
+      <div
+        className="absolute right-0 transition-transform duration-200 bg-black bg-opacity-40 pr-3 pl-2 text-white py-2 rounded-l-full"
+        style={{ transform: isAdded ? "translateX(0)" : "translateX(100%)" }}
+      >
+        ✅ Added to cart
       </div>
     </div>
   );

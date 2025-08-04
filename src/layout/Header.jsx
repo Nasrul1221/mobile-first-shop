@@ -52,12 +52,6 @@ export default function Header() {
                       <NavigationMenuLink asChild>
                         <NavLink to="/products">Products</NavLink>
                       </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <NavLink to="/cart">Cart</NavLink>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <NavLink to="/cart">Cart</NavLink>
-                      </NavigationMenuLink>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 </NavigationMenuList>

@@ -4,27 +4,26 @@ import { clsx } from "clsx";
 // React && Hooks
 import useDebounce from "@/hooks/useDebounce";
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 export default function MySearch({ props, className }) {
   const [value, setValue] = useState("");
   const debouncedQuery = useDebounce(value, 500);
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
   useEffect(() => {
-    if (window.location.href.includes("/products")) {
-      if (debouncedQuery.trim() !== "") {
-        const newParams = new URLSearchParams(searchParams);
+    const newParams = new URLSearchParams(searchParams);
+    if (location.pathname === "/products") {
+      if (debouncedQuery) {
         newParams.set("q", debouncedQuery);
-        navigate(`/products?${newParams}`);
       } else {
-        const newParams = new URLSearchParams(searchParams);
         newParams.delete("q");
-        navigate(`/products?${newParams}`);
       }
+
+      setSearchParams(newParams);
     }
-  }, [debouncedQuery, searchParams]);
+  }, [debouncedQuery, searchParams, setSearchParams, location.pathname]);
 
   return (
     <div
